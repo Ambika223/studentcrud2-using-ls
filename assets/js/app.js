@@ -8,8 +8,6 @@ const updatestdBtn = document.getElementById("updatestdBtn")
 const stdContainer = document.getElementById("stdContainer")
 
 
-let editId = null;
-
 let stdsArr = [
     {
         stdId: '1',
@@ -32,7 +30,7 @@ let stdsArr = [
 // Get data from localStorage
 
 // localStorage.setItem("stdsArr", JSON.stringify(stdsArr));
-let stdsJSON = localStorage.getItem("stdsArr") || [];
+let stdsJSON = localStorage.getItem("stdsArr");
 console.log(stdsJSON);
 if (stdsJSON) {
     stdsArr = JSON.parse(stdsJSON);
@@ -154,12 +152,16 @@ function onRemove(ele) {
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let getIndex = stdsArr.findIndex(s => s.stdId === DELETE_ID);
+            stdsArr.splice(getIndex, 1);
+            localStorage.setItem("stdsArr", JSON.stringify(stdsArr))
+            ele.closest('tr').remove();
+            snackBar(`Student with ${DELETE_ID} deleted successfully`, 'success');
+        }
     })
-    let getIndex = stdsArr.findIndex(s => s.stdId === DELETE_ID);
-    stdsArr.splice(getIndex, 1);
-    ele.closest('tr').remove();
-    snackBar(`Student with ${DELETE_ID} deleted successfully`, 'success');
-    localStorage.setItem("stdsArr", JSON.stringify(stdsArr))
 }
+
 stdForm.addEventListener("submit", onstdAdd)
 updatestdBtn.addEventListener("click", onstdUpdate);
