@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-info">
+    <h2 class="text-center mt-3">Student Crud</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="" id="stdForm">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" class="form-control" id="fullname" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="text" class="form-control" id="age" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact">Contact</label>
+                                <input type="tel" class="form-control" id="contact" required>
+                            </div>
+
+                            <button type="submit" id="addstdBtn" class="btn btn-success btn-block btn-sm">Add
+                                Student</button>
+                            <button type="button" id="updatestdBtn"
+                                class="btn btn-primary btn-block btn-sm d-none">Update
+                                Student</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Sr.No</th>
+                                    <th>Full Name</th>
+                                    <th>Age</th>
+                                    <th>Email</th>
+                                    <th>Contact</th>
+                                    <th>Edit</th>
+                                    <th>remove</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="stdContainer">
+                                <!-- <tr>
+                                    <td>1</td>
+                                    <td>John Doe</td>
+                                    <td>23</td>
+                                    <td>jd@gmail.com</td>
+                                    <td>1234567890</td>
+                                    <td class="text-center"><i class="fa-solid fa-pen-to-square fa-2x text-primary"
+                                            role="button"></i></td>
+                                    <td class="text-center"><i class="fa-solid fa-trash-can fa-2x text-danger"
+                                            role="button"></i></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
