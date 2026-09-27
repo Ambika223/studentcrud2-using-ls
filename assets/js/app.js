@@ -32,7 +32,7 @@ let editId = null;
 // Get data from localStorage
 
 // localStorage.setItem("stdsArr", JSON.stringify(stdsArr));
-let stdsJSON = localStorage.getItem("stdsArr");
+let stdsJSON = localStorage.getItem("stdsArr") || [];
 console.log(stdsJSON);
 if (stdsJSON) {
     stdsArr = JSON.parse(stdsJSON);
