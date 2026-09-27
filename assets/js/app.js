@@ -10,23 +10,23 @@ const stdContainer = document.getElementById("stdContainer")
 
 let editId = null;
 
-// let stdsArr = [
-//     {
-//         stdId: '1',
-//         fullname: "Reshma Pradha",
-//         age: "20",
-//         email: "rp@gmail.com",
-//         contact: "3421567890"
-//     },
+let stdsArr = [
+    {
+        stdId: '1',
+        fullname: "Reshma Pradha",
+        age: "20",
+        email: "rp@gmail.com",
+        contact: "3421567890"
+    },
 
-//     {
-//         stdId: '2',
-//         fullname: "Abhishek Gupta",
-//         age: "22",
-//         email: "agn@gmail.com",
-//         contact: "5421567890"
-//     }
-// ];
+    {
+        stdId: '2',
+        fullname: "Abhishek Gupta",
+        age: "22",
+        email: "agn@gmail.com",
+        contact: "5421567890"
+    }
+];
 
 
 // Get data from localStorage
@@ -130,7 +130,7 @@ function onstdUpdate() {
     stdForm.reset();
     let getIndex = stdsArr.findIndex(s => s.stdId == UPDATE_ID)
     stdsArr[getIndex] = UPDATE_OBJ;
-
+localStorage.setItem("stdsArr", JSON.stringify(stdsArr));
     let tr = document.getElementById(UPDATE_ID).children;
     // console.log(tr)
     tr[1].innerText = UPDATE_OBJ.fullname;
